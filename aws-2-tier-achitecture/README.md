@@ -68,7 +68,7 @@ SSH into the DB virtual machine:
         ssh -i <tech501-amir-aws-key> ubuntu@<db_vm_public_ip>
         ```
 
-############    - check mongodb status:
+At this point you can install Nginx to see if its working... or 
 
 ## Database Virtual Machine Script
 
@@ -179,8 +179,8 @@ sudo systemctl reload nginx
 # Step 9: Set up the database connection environment variable
 export DB_HOST=mongodb://<db_private_ip>:27017/posts
 
-# Step 10: Install application dependencies, check database connection, clear and reseed the database
-npm install
+# Step 10: cd into the app folder. Install application dependencies, check database connection, clear and reseed the database
+sudo npm install
 
 # Step 11: Start the Node.js application in the background using PM2
 pm2 start app.js
@@ -188,9 +188,17 @@ pm2 start app.js
 
 Your Application and /Post page should load.
 
-![alt text](<../images-videos/Screenshot 2025-02-05 182852.png>)
+![npm confirmed installation](<../images-videos/npm installation.png>)
+
+![Sparta App Main-page: successful load - v1](<../images-videos/Screenshot 2025-02-05 182852.png>)
 
 ## Troubleshooting
 
-![alt text](<../images-videos/Screenshot 2025-02-05 173215.png>)
+![Sparta App /posts-page: unsuccessful load - v1](<../images-videos/Screenshot 2025-02-05 173215.png>)
 - /posts page does not load - something to do with the VM's connection to each other.
+
+![Npm start terminal error - v1](../images-videos/npm-terminal-error-v1.1.png)
+
+![Npm start terminal error - v1](../images-videos/npm-terminal-error-v1.png)
+
+![Npm terminal error - v2](../images-videos/npm-terminal-error-v2.png)
