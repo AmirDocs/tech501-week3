@@ -25,6 +25,12 @@ Accept the SSH key fingerprint:
 The first time you connect, you'll be asked to confirm the host's fingerprint. Type yes to continue.
 ```
 
+*or create the key pair on the console with:*
+
+ ```bash
+    ssh-keygen -t rsa -b 4096 -C <enter_personal_email_address>
+```
+
 ## Create your Database Virtual Machine
 
 - **name**: `tech501-amir-sparta-app-db-vm`
@@ -128,7 +134,7 @@ sudo systemctl restart mongod
           - **protocol**: `tcp`
           - **port range**: `80`
           - **source type**: `anywhere`
-          - **description**: `ALLOWHTTP`
+          - **description**: `AllowHTTP`
 
 SSH into your App virtual machine with:
 
@@ -182,8 +188,9 @@ pm2 start app.js
 
 Your Application and /Post page should load.
 
-![alt text](<../images-videos/Screenshot 2025-02-05 173215.png>)
+![alt text](<../images-videos/Screenshot 2025-02-05 182852.png>)
 
 ## Troubleshooting
 
-- /posts page does not load. 
+![alt text](<../images-videos/Screenshot 2025-02-05 173215.png>)
+- /posts page does not load - something to do with the VM's connection to each other.
